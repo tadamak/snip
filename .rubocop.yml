@@ -1,0 +1,25 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  TargetRailsVersion: 5.2
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - config/**/*
+    - lib/tasks/*.rake
+    - vendor/gems/**/*
+    - node_modules/**/*
+
+Rails:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+LineLength:
+  Enabled: false
+
+StringLiterals:
+  EnforcedStyle: double_quotes
+
+Lint/EndAlignment:
+  AutoCorrect: true
