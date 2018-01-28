@@ -1,0 +1,19 @@
+<%= form_for @snippet, url: url do |f| %>
+  <% if @snippet.errors.any? %>
+    <div>
+      <ul>
+        <% @snippets.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.text_area :content, required: true, autofocus: true %>
+  <% if @snippet.new_record? %>
+    <%= f.submit "Create Snippet" %>
+    <%= link_to "Cancel", snippets_path %>
+  <% else %>
+    <%= f.submit "Update Snippet" %>
+    <%= link_to "Cancel", snippet_path(@snippet) %>
+  <% end %>
+<% end %>

@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root to: "snippets#index"
+
+  resources :snippets, path: "/", param: :sid, constraints: { sid: /[a-zA-Z0-9\-]{32,36}/ }
 end

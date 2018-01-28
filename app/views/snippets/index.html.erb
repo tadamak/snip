@@ -1,0 +1,10 @@
+<%= link_to "New Snippet", new_snippet_path %>
+<ul>
+  <% @snippets.each do |snippet| %>
+    <li>
+      <%= link_to snippet_path(snippet) do %>
+        <%= snippet.sid %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
