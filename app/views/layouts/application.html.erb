@@ -4,10 +4,15 @@
     <title>Snip</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_pack_tag "application" %>
+    <%= stylesheet_pack_tag "client-bundle" %>
   </head>
 
   <body>
-    <%= yield %>
-    <%= javascript_pack_tag "application" %>
+    <div cclass="container">
+      <%= yield %>
+    </div>
+    <%= react_component("SnippetApp", props: {}, prerender: true) %>
+    <%= javascript_pack_tag "client-bundle" %>
+    <%#= javascript_pack_tag "application" %>
   </body>
 </html>
